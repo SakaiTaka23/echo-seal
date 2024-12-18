@@ -1,0 +1,10 @@
+[common]
+port = 8000
+# Must be at least 16 for security
+salt_length = 16
+
+[yescrypt]
+# This will be 2^n Must be in range 9~18
+yescrypt_nlog2 = 11
+# Must be 1~32
+yescrypt_r = 31

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package yescrypt.v1;
+
+message HashRequest {
+    string password = 2;
+}
+
+message HashResponse {
+    string hash = 1;
+}
+
+message VerifyRequest {
+    string hash = 1;
+    string password = 2;
+}
+
+message VerifyResponse {
+    bool result = 1;
+}
+
+service YescryptService {
+    rpc Hash(HashRequest) returns (HashResponse){}
+    rpc Verify(VerifyRequest) returns (VerifyResponse){}
+}

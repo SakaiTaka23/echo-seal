@@ -1,0 +1,33 @@
+output:
+  sort-results: true
+linters:
+  enable-all: true
+  disable:
+    - exhaustivestruct
+    - exhaustruct
+    - gofumpt
+    - varnamelen
+    - ireturn
+    - interfacebloat
+    - wrapcheck
+    - depguard
+    - gci
+
+run:
+  allow-parallel-runners: true
+
+issues:
+  exclude-dirs:
+    - gen
+
+linters-settings:
+  gci:
+    sections:
+      - standard
+      - default
+  gofmt:
+    simplify: true
+  tagliatelle:
+    case:
+      rules:
+        json: snake
